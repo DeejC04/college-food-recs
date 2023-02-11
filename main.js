@@ -1,6 +1,6 @@
 const text = document.getElementById("rotating-text");
 
-let texts = [  "snacks",  "drinks",  "friends"];
+let texts = [  "snacks",  "drinks",  "friends", "food"];
 
 let index = 0;
 
@@ -14,3 +14,4 @@ function updateText() {
 }
 
 setInterval(updateText, 3500);
+
