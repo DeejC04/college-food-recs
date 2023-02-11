@@ -7,15 +7,6 @@ body {
     margin: 0;
 }
 
-.flex-container {
-    display: flex;
-    align-items: center;
-    height: 500px;
-    justify-content: space-around;
-    text-align: center;
-    margin-top: 50px;
-}
-
 .purple-color {
     color:rgb(255, 124, 255)
 }
@@ -30,19 +21,36 @@ body {
     transition: opacity 0.4s ease-in-out;
 }
 
-.flex-item1 {
-    flex: 1;
-    font-size: 30px;
+.overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
 }
 
-.flex-item2 {
-    display: flex;
-    overflow: hidden;
+.container video {
+    position:relative;
+    z-index:0;
+    filter: blur(2px);
+    opacity: 50%;
+}
+
+.container::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    content: '';
+    background-image: linear-gradient(
+        69deg, 
+        rgba(250,233,251,.3) 0%, 
+        rgba(254,140,255,.3) 35%, 
+        rgba(246,142,255,.3) 37%, 
+        rgba(145,140,255,.3) 79%, 
+        rgba(67,35,255,.3) 100%);
+}
+
+.container {
     position: relative;
-    border: 50px solid #1a1a1a;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: .5vw;
-    margin-top: 1vw;
 }
